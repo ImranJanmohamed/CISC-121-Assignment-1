@@ -1,0 +1,9 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A):
+    unpaired = 0 # makes the unpaired variable equal to 0. It is 0 because the XOR of any number and 0 is that number
+    for num in A: # for every number in A
+        unpaired ^= num # The ^ is the XOR operation. If the number is XOR'd by itself, it returns 0 and if it is XOR'd with 0, it returns
+                        # that number
+    return unpaired # returns the value stored in unpaired
