@@ -1,0 +1,14 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A):
+    n = len(A) # n is the length of the elements in A (integers)
+    m = n + 1 # m is the range of elements contained within the array
+
+    expected_sum = (m * (m + 1)) // 2 # This is the expected sum in the arithmetic array
+
+    actual_sum = sum(A) # This is the actual sum in the array 
+
+    return expected_sum - actual_sum # This is the difference between the actual and expected sums, resulting in the missing value
+
+print (solution([2, 3, 1, 5])) # Should print: 4
