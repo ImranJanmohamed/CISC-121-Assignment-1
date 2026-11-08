@@ -1,0 +1,12 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A, K):
+    if not A or K == 0: # If A is an empty array or the amount of rotations is 0, then just return A
+        return A
+    
+    K = K % len(A) # K = The size of the array mod the amount of rotations to handle multiple rotations efficiently
+
+    return A[-K:] + A[:-K] # Return the amount of rotated numbers at the end of the array plus the rest of the array that is left over
+
+print(solution([3, 8, 9, 7, 6], 3)) # Should print: [9, 7, 6, 3, 8]
