@@ -1,0 +1,23 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(A):
+    total_sum = sum(A) # Make the total sum equal to the sum of all elements in A
+    left_sum = 0 # Start the left sum at 0 to be added onto later
+    min_diff = float('inf') # Infinity is not a number its a concept. This means that any number that is tested is lower and will be the new min_diff
+
+    for p in range(1, len(A)): # for when p is in the range of 1 to the length of A
+
+        left_sum += A[p - 1] # Wherever p splits the array, it gathers the sum of all elements on the left of p, excluding p 
+                             # (Thats why it is p - 1 so p itelf it not included)
+        right_sum = total_sum - left_sum # Since we have the total sum (Sum of all elements in A) and the left sum (All elements before p, 
+                                         # excluding p), we can figure out the sum of all elements in the right side
+
+        diff = abs(left_sum - right_sum) # Finds the absolute difference between the left and right sum incase the right sum is larger than the 
+                                         # left sum, it will find the absolute value of the difference, making it a positive difference, always.
+        min_diff = min(min_diff, diff) # Gets the original min_diff and compares it to the new diff in order to see which one is smaller. Then if 
+                                       # the new diff is smaller than the original one, the diff takes the place of the mid_diff
+
+    return min_diff # Returns the new min_difference 
+
+print (solution([3, 1, 2, 4, 3])) # Should print: 1
