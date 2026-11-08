@@ -7,3 +7,5 @@ def solution(A):
         unpaired ^= num # The ^ is the XOR operation. If the number is XOR'd by itself, it returns 0 and if it is XOR'd with 0, it returns
                         # that number
     return unpaired # returns the value stored in unpaired
+
+print (solution([9, 3, 9, 3, 9, 7, 9])) # Should print: 7
