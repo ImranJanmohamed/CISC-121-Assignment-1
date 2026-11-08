@@ -1,0 +1,12 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+import math
+
+
+def solution(X, Y, D): # Solution function
+    return math.ceil((Y - X) / D) # Find the difference between Y and X then divide it by the number of jumps (D) in order to be greater 
+                                  # than or equal to Y
+                                  # Use Ceiling function to round up
+
+print(solution(10, 85, 30)) # Should print: 3
